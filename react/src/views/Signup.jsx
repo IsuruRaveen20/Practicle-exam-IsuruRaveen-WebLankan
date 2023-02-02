@@ -16,12 +16,14 @@ export default function Signup() {
     const onSubmit = ev => {
         ev.preventDefault()
 
+        //Email validation
         const email = emailRef.current.value;
         if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-          setErrors({ email: ["Invalid email address"] });
-          return;
+            setErrors({ email: ["Invalid email address"] });
+            return;
         }
 
+        
         const payload = {
             name: nameRef.current.value,
             email: emailRef.current.value,
@@ -47,7 +49,7 @@ export default function Signup() {
         <div className="login-signup-form animated fadeInDown">
             <div className="form" id="form">
                 <form onSubmit={onSubmit}>
-                    <h1 className="title">Signup for Free</h1>
+                    <h1 className="title">Sign Up</h1>
                     {errors &&
                         <div className="alert">
                             {Object.keys(errors).map(key => (
@@ -56,11 +58,11 @@ export default function Signup() {
                         </div>
                     }
                     <input ref={nameRef} type="text" placeholder="Full Name" />
-                    <input ref={emailRef} type="text" placeholder="Email Address"/>
+                    <input ref={emailRef} type="text" placeholder="Email Address" />
                     <input ref={contactRef} type="text" placeholder="Contact" />
                     <input ref={addressRef} type="text" placeholder=" Address" />
                     <input ref={passwordRef} type="password" placeholder="Password" />
-                    <input ref={passwordConfirmationRef} type="password" placeholder="Repeat Password" />
+                    <input ref={passwordConfirmationRef} type="password" placeholder="Confirm Password" />
                     <button className="btn btn-block">Signup</button>
                     <p className="message">Already registered? <Link to="/login">Sign In</Link></p>
                 </form>

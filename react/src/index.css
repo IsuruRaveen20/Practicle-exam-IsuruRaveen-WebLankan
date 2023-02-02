@@ -30,10 +30,11 @@ input {
     box-sizing: border-box;
     font-size: 14px;
     transition: all 0.3s;
+    border-radius: 10px;
 }
 
 input:focus {
-    border-color: #5b08a7;
+    border-color: #028596cb;
 }
 
 .btn,
@@ -171,7 +172,7 @@ table > tbody > tr > td {
 }
 
 .login-signup-form .form .message a {
-    color: #5b08a7;
+    color: #028596cb;
     text-decoration: none;
 }
 
@@ -184,7 +185,7 @@ table > tbody > tr > td {
 
 #defaultLayout aside {
     width: 240px;
-    background-color: #032250;
+    background-color: #028596cb;
     padding: 1rem
 }
 
@@ -240,4 +241,15 @@ table > tbody > tr > td {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.emailText{
+    margin-right: 10px;
+    margin-top: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.search{
+    border-radius: 10px;
 }
