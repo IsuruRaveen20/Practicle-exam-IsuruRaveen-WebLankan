@@ -42,7 +42,7 @@ input:focus {
 .btn-delete {
     font-family: "Roboto", sans-serif;
     outline: 0;
-    background: #5b08a7;
+    background: #032250;
     border: 0;
     text-decoration: none;
     padding: 15px;
@@ -85,7 +85,7 @@ input:focus {
 .btn:hover,
 .btn:active,
 .btn:focus {
-    background: #5b08a7;
+    background: #032250;
 }
 
 .text-center {
@@ -184,7 +184,7 @@ table > tbody > tr > td {
 
 #defaultLayout aside {
     width: 240px;
-    background-color: #5b08a7;
+    background-color: #032250;
     padding: 1rem
 }
 
