@@ -1,7 +1,7 @@
-import {useNavigate, useParams} from "react-router-dom";
-import {useEffect, useState} from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import axiosClient from "../axios-client.js";
-import {useStateContext} from "../context/ContextProvider.jsx";
+import { useStateContext } from "../context/ContextProvider.jsx";
 
 export default function UserForm() {
     const navigate = useNavigate();
@@ -33,6 +33,11 @@ export default function UserForm() {
 
     const onSubmit = ev => {
         ev.preventDefault()
+        const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (!emailRegex.test(user.email)) {
+            setErrors({ email: ['Invalid email address'] });
+            return;
+        }
         if (user.id) {
             axiosClient.put(`/users/${user.id}`, user)
                 .then(() => {
